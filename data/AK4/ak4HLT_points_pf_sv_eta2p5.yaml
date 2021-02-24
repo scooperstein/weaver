@@ -45,7 +45,7 @@ inputs:
    pf_points:
       length: 50
       vars: 
-         - [jet_pfcand_etarel, null]
+         - [jet_pfcand_deta, null]
          - [jet_pfcand_dphi, null]
          #- [pfcand_phirel, null]
    pf_features:
@@ -62,6 +62,7 @@ inputs:
          - [jet_pfcand_energy_log, 1.2, 0.6]
          - [jet_pfcand_etarel, null]
          - [jet_pfcand_dphi, null]
+         - [jet_pfcand_deta, null]
          #- [jet_pfcand_phirel, null]
          - [jet_pfcand_eta, 0., 1.2]
          - [jet_pfcand_charge, null]
@@ -73,12 +74,16 @@ inputs:
          - [jet_pfcand_dzsig, 0, 0.7]
          - [jet_pfcand_dxy, 0, 270]
          - [jet_pfcand_dxysig, 1.1]
-         #- [jet_pfcand_btagEtaRel, 2.1, 0.5] 
          - [jet_pfcand_pperp_ratio, 0, 1]
          - [jet_pfcand_ppara_ratio, 0, 1]
          - [jet_pfcand_trackjet_d3d, 0, 90]
          - [jet_pfcand_trackjet_d3dsig, 0, 0.5]
          - [jet_pfcand_trackjet_dist, 0, 50]
+         - [jet_pfcand_id, null]
+         - [jet_pfcand_trackjet_decayL, null]
+         - [jet_pfcand_nhits, null]
+         - [jet_pfcand_npixhits, null]
+         - [jet_pfcand_nstriphits, null]
    pf_mask:
       length: 50
       vars: 
@@ -102,6 +107,9 @@ inputs:
          - [jet_sv_dxysig, 5, 0.03]
          - [jet_sv_d3d, 0.35, 0.4]
          - [jet_sv_d3dsig, 5, 0.03]
+         - [jet_pfcand_mindeta_sv, null]
+         - [jet_pfcand_mindphi_sv, null]
+         - [jet_sv_ptrel, null]
    sv_mask:
       length: 5
       vars:
