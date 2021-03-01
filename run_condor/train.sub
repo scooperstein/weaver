@@ -1,0 +1,10 @@
+executable              = train.sh
+arguments               = $(ClusterId)$(ProcId)
+output                  = train.$(ClusterId).$(ProcId).out
+error                   = train.$(ClusterId).$(ProcId).err
+log                     = train.$(ClusterId).log
+transfer_input_files    = ../train.py,../data/AK4/ak4HLT_points_pf_sv_eta2p5.yaml,../networks/particle_net_pf_sv.py,../utils/ 
+when_to_transfer_output = ON_EXIT
+request_GPUs = 1
+request_CPUs = 1
+queue
