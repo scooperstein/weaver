@@ -1,0 +1,15 @@
+executable              = evaluate.sh
+#universe                = vanilla
++JobFlavour             = "longlunch"
+#+MaxRuntime             = 300000
+arguments               = $(ClusterId)$(ProcId)
+output                  = evaluate.$(ClusterId).$(ProcId).out
+error                   = evaluate.$(ClusterId).$(ProcId).err
+log                     = evaluate.$(ClusterId).log
+transfer_input_files    = ../train.py,../data/AK4/ak4HLT_points_pf_sv_eta2p5_3classes.yaml,../networks/particle_net_pf_sv.py,../utils/,../networks/particle_net_ak4_pf_sv.py 
+#transfer_input_files    = ../train.py,../data/AK4/ak4HLT_points_pf_sv_eta2p5.yaml,../networks/particle_net_pf_sv.py,../utils/,../networks/particle_net_ak4_pf_sv.py 
+when_to_transfer_output = ON_EXIT
+request_GPUs = 1
+request_CPUs = 1
+#request_memory = 32 GB
+queue

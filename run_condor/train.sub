@@ -1,9 +1,13 @@
 executable              = train.sh
+#universe                = vanilla
++JobFlavour             = "nextweek"
+#+MaxRuntime             = 300000
 arguments               = $(ClusterId)$(ProcId)
 output                  = train.$(ClusterId).$(ProcId).out
 error                   = train.$(ClusterId).$(ProcId).err
 log                     = train.$(ClusterId).log
-transfer_input_files    = ../train.py,../data/AK4/ak4HLT_points_pf_sv_eta2p5.yaml,../networks/particle_net_pf_sv.py,../utils/ 
+transfer_input_files    = train.py,ak4HLT_points_pf_sv_eta2p5.yaml,particle_net_pf_sv.py,utils/,particle_net_ak4_pf_sv.py 
+#transfer_input_files    = ../train.py,../data/AK4/ak4HLT_points_pf_sv_eta2p5.yaml,../networks/particle_net_pf_sv.py,../utils/,../networks/particle_net_ak4_pf_sv.py 
 when_to_transfer_output = ON_EXIT
 request_GPUs = 1
 request_CPUs = 1
